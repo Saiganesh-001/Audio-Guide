@@ -8,8 +8,7 @@ require("dotenv").config()
 exports.signup = async (req, res) => {
     try {
         // get data
-        const { email, password } = req.body;
-
+        const { email, password, username } = req.body;
         // check if user already exist 
         const existingUser = await User.findOne({ email });
 
@@ -31,10 +30,10 @@ exports.signup = async (req, res) => {
                 message: "Error in hashing password",
             })
         }
-
+        console.log(username)
         // Create Entry for User
         let user = await User.create({
-            email,password:hashedPassword
+            email,password:hashedPassword,username
         });
 
         return res.status(200).json({
@@ -78,6 +77,7 @@ exports.login = async (req,res) => {
         // Verify password & generate a JWT token
 
         const payload = {
+            username : user.username,
             email : user.email,
             id : user._id,
         };
@@ -92,7 +92,7 @@ exports.login = async (req,res) => {
             user = user.toObject();
             user.token = token;
             user.password = undefined;
-
+            console.log(user)
             const options = {
                 expires : new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
                 httpOnly : true,

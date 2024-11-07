@@ -2,50 +2,15 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import BgImages from "../components/BgImages";
 import { FaSearch } from "react-icons/fa";
-import { CiSearch } from "react-icons/ci";
-import { SlLocationPin } from "react-icons/sl";
-import { CiFaceSmile } from "react-icons/ci";
-import { CiHeadphones } from "react-icons/ci";
-import { RiBankLine } from "react-icons/ri";
-import { MdKeyboardArrowRight } from "react-icons/md";
 import AudioPlayer from "../components/AudioPlayer";
 import Working from "../components/Working";
+import Footer from "../components/Footer";
+import { FaArrowRight } from "react-icons/fa";
+import ExploreCulture from "../components/ExploreCulture";
+import NewsLetter from "../components/NewsLetter";
 
 const Home = () => {
-	const popularDestination = [
-		{
-			imgUrl:
-				"https://plus.unsplash.com/premium_photo-1661963385126-11fa577925d3?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-			name: "Stepwell",
-			happy: 4,
-			iconic: 194,
-			audio: 3,
-		},
-		{
-			imgUrl:
-				"https://plus.unsplash.com/premium_photo-1676285070008-fb0cc5c24bb7?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-			name: "Ajanta Cave",
-			happy: 10,
-			iconic: 24,
-			audio: 5,
-		},
-		{
-			imgUrl:
-				"https://images.unsplash.com/photo-1702742969679-382a82f2884d?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-			name: "Jaisalmer",
-			happy: 6,
-			iconic: 124,
-			audio: 2,
-		},
-		{
-			imgUrl:
-				"https://plus.unsplash.com/premium_photo-1694475144012-f69becf88a2c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-			name: "Taj Mahal",
-			happy: 20,
-			iconic: 294,
-			audio: 10,
-		},
-	];
+
 
 	const circleImages = [
 		"https://media.voicemap.me/public/users/avatars/000/000/166/medium/Tuscany_Trotter_VoiceMap.png",
@@ -80,8 +45,8 @@ const Home = () => {
 						Stories that move you
 					</div>
 					<div className="flex items-center justify-center text-white mt-3 text-3xl">
-						Explore at your own pace with
-						Audio Guide immersive audio tour app
+						Explore at your own pace with Audio
+						Guide immersive audio tour app
 					</div>
 				</div>
 				<div className="flex items-center justify-center">
@@ -139,7 +104,7 @@ const Home = () => {
 						</div>
 						<div className="text-[#454D57]">
 							Tours work offline and play
-							automatically 
+							automatically
 						</div>
 					</div>
 					<div className="max-h-[100px] translate-x-[-30px]">
@@ -157,99 +122,12 @@ const Home = () => {
 					screen
 				</div>
 				<div className="text-center text-[#454D57] text-[20px] mt-2">
-					They’re like podcasts that
-					move with you, to tell stories about
-					what you’re seeing right now.
+					They’re like podcasts that move with
+					you, to tell stories about what you’re
+					seeing right now.
 				</div>
 			</div>
-			<div className="min-h-[100vh] relative  flex flex-col items-center ">
-				<div className="min-w-[75%]">
-					<div className="text-5xl flex items-end min-h-[10vh] py-10">
-						Explore culture{" "}
-						<span className="font-bold ml-4">
-							{" "}
-							anywhere, anytime
-						</span>
-					</div>
-
-					<div className="max-w-[30%] min-h-[6vh] rounded-[30px] border-[2px] shadow-md flex items-center pl-4 gap-4">
-						<div className=" max-w-[10%] px-2 py-3">
-							<CiSearch size={25} />
-						</div>
-						<div>
-							<input
-								type="text"
-								className="outline-none"
-								size={35}
-								placeholder="Search for destination, attraction or guide"
-							/>
-						</div>
-					</div>
-					<div className="flex items-center gap-3 pt-14 pb-10">
-						<div className="bg-[#F0F2F4] min-h-[50px] min-w-[50px] rounded-[50%] flex items-center justify-center">
-							<SlLocationPin
-								size={20}
-								className="text-[#798C9F]"
-							/>
-						</div>
-						<div className="text-2xl">
-							Popular destinations
-						</div>
-					</div>
-					<div className="flex justify-around pb-4 ">
-						{popularDestination.map(
-							(des, index) => (
-								<div>
-									<div>
-										<img
-											src={des.imgUrl}
-											alt=""
-											width={300}
-											className="rounded-xl"
-										/>
-									</div>
-									<div className="text-2xl py-2">
-										{des.name}
-									</div>
-									<div className="flex gap-5">
-										<div className="flex items-center gap-1 text-[#659F17]">
-											<div>
-												<CiFaceSmile size={20} />
-											</div>
-											<div className="text-[15px]">
-												{des.happy}
-											</div>
-										</div>
-										<div className="flex items-center gap-1 text-[#C82853]">
-											<div>
-												<RiBankLine size={20} />
-											</div>
-											<div className="text-[15px]">
-												{des.iconic}
-											</div>
-										</div>
-										<div className="flex items-center gap-1 text-[#62B7CB]">
-											<div>
-												<CiHeadphones size={20} />
-											</div>
-											<div className="text-[15px]">
-												{des.audio}
-											</div>
-										</div>
-									</div>
-								</div>
-							)
-						)}
-					</div>
-					<div className="max-w-[120px] min-h-[60px] rounded-full border-[1px] flex justify-center gap-2 items-center shadow-md text-[#adb1b4] cursor-pointer">
-						<div >See all</div>
-						<div className="translate-y-0.5">
-							<MdKeyboardArrowRight size={20} />
-						</div>
-					</div>
-					<div className="mt-20 mb-10 border-b-[3px]"></div>
-				</div>
-			</div>
+			<ExploreCulture/>
 			<div className="">
 				<div
 					className="min-h-[40vh] bg-[#283D51]  bg-cover mt-10 flex flex-col items-center p-10"
@@ -280,11 +158,74 @@ const Home = () => {
 				</div>
 			</div>
 			<div className="mt-20 mb-10 max-w-[75%] m-auto border-b-[3px]"></div>
+
 			<Working />
 
-			<div className="min-h-[100vh]">
-                <div className=""></div>
+			<div className="min-h-[50vh] bg-[#F7F8F9] flex flex-col items-center gap-4 mb-8">
+				<div className="mt-3 text-4xl text-semibold text-[#454D57]">Meet our partners</div>
+				<div className="text-[#454D57] text-xl">
+					VoiceMap is a partner to publishers in
+					over 400 destinations around the world
+				</div>
+				<div className="flex gap-4 items-center text-[#028CD6] cursor-pointer hover:underline">
+					<div>Read Publisher Stories</div>
+					<FaArrowRight />
+				</div>
+				<img src="https://media.voicemap.me/assets/icons/pricing/group_publisher_1-8a9f4602a5398cb494991dcb15db9974220ad25471deeae3b2e4c1d3817fe74b.webp" alt=""/>
+				<img src="https://media.voicemap.me/assets/icons/pricing/group_publisher_2-19aba36324da1405556daaa8741191713b49d454fb2ec00d22d3eac218adfaaa.svg" alt="" />
 			</div>
+
+			<div className="flex justify-center gap-6 my-10">
+				<div className="flex gap-4 min-h-[24vh] max-w-[32vw] rounded-md shadow-lg">
+					<img
+						src="https://media.voicemap.me/assets/icons/cover_new_tour_dt-bc21fcf15101fcefee3bc52531a40fe7a8d4ac2f5c103c666bdada4889deea19.png"
+						alt=""
+						width={200}
+					/>
+					<div className="mt-6">
+						<div className="text-[#454D57] font-semibold text-xl">
+							Create a new tour
+						</div>
+						<div className="text-[#454D57]">
+							You can start using our
+							collaborative publishing tool
+							straight away. There’s no upfront
+							cost and an experienced audio tour
+							editor will help you through each
+							step of the process.
+						</div>
+						<button className="bg-red-600 text-white bg-whi font-bold px-5 py-2 rounded-md hover:bg-red-700 transition duration-200 mt-6">
+							Start Now
+						</button>
+					</div>
+				</div>
+
+				<div className="flex gap-4 min-h-[24vh] max-w-[32vw] rounded-md shadow-lg">
+					<img
+						src="https://media.voicemap.me/assets/icons/cover_explore_dt-0f40591ebff41a24c5c6c6fb545bd57a684aa5d00563673bfd7943cf25051443.png"
+						alt=""
+						width={200}
+					/>
+					<div className="mt-6">
+						<div className="text-[#454D57] font-semibold text-xl">
+							Continue exploring
+						</div>
+						<div className="text-[#454D57]">
+							Our flexible pricing and
+							distribution options work for
+							partners large and small, covering
+							everything from a marriage proposal
+							by audio guide to 42 of them in 7
+							languages for a tourism board.
+						</div>
+						<button className="bg-red-600 text-white bg-whi font-bold px-5 py-2 rounded-md hover:bg-red-700 transition duration-200 mt-6">
+							Learn More
+						</button>
+					</div>
+				</div>
+			</div>
+			<NewsLetter/>
+			<Footer />
 		</div>
 	);
 };
